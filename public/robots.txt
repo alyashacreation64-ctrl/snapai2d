@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /privacy
+Disallow: /terms
+Disallow: /disclaimer
 
 Sitemap: https://snap2do.ai/sitemap.xml
