@@ -8,6 +8,7 @@ interface SEOProps {
   ogImage?: string;
   keywords?: string[];
   structuredData?: object | object[];
+  noindex?: boolean;
 }
 
 const BASE_URL = 'https://snap2do.ai';
@@ -20,6 +21,7 @@ export function SEO({
   ogImage = `${BASE_URL}/og-image.png`,
   keywords = [],
   structuredData,
+  noindex = false,
 }: SEOProps) {
   useEffect(() => {
     document.title = title;
@@ -35,6 +37,17 @@ export function SEO({
     };
 
     setMeta('description', description);
+
+    setMeta('robots', noindex ? 'noindex, nofollow' : 'index, follow');
+    const existingRobots = document.querySelector('meta[name="robots"][data-static]');
+    if (!existingRobots) {
+      const staticRobots = document.createElement('meta');
+      staticRobots.setAttribute('name', 'robots');
+      staticRobots.setAttribute('data-static', 'true');
+      staticRobots.setAttribute('content', noindex ? 'noindex, nofollow' : 'index, follow');
+      document.head.appendChild(staticRobots);
+    }
+
     if (keywords.length > 0) {
       setMeta('keywords', keywords.join(', '));
     }

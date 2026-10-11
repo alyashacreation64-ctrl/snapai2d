@@ -8,6 +8,7 @@ export function DisclaimerPage() {
         description="AI results from Snap2Do AI may contain errors. Always verify important payments, deadlines, travel information, appointments, addresses, and work instructions before acting."
         canonical={`${BASE_URL}/disclaimer`}
         keywords={['snap2do ai disclaimer', 'AI accuracy disclaimer', 'screenshot analysis disclaimer']}
+        noindex
       />
 
       <div className="pt-24">

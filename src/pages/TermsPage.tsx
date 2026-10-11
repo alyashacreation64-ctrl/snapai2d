@@ -8,6 +8,7 @@ export function TermsPage() {
         description="The terms and conditions for using Snap2Do AI, our free AI screenshot analyzer tool. Please read these terms carefully before using the service."
         canonical={`${BASE_URL}/terms`}
         keywords={['snap2do ai terms', 'terms of service', 'AI tool terms']}
+        noindex
       />
 
       <div className="pt-24">

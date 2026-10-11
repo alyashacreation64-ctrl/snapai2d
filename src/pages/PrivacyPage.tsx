@@ -8,6 +8,7 @@ export function PrivacyPage() {
         description="Learn how Snap2Do AI handles your screenshots and data. We do not permanently store uploaded images, and your screenshots are never publicly accessible."
         canonical={`${BASE_URL}/privacy`}
         keywords={['snap2do ai privacy policy', 'screenshot privacy', 'AI data handling']}
+        noindex
       />
 
       <div className="pt-24">
